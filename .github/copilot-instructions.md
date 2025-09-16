@@ -1,17 +1,21 @@
-# Copilot Instructions — Vibe Coding Starter
+# Copilot Instructions — Dice Duel Game
 
-> Purpose: Speed-run a tiny **web MVP** in under an hour. Keep scope minimal. Prefer plain React + Vite. Only add deps if necessary.
+> Purpose: Build a **dice guessing game MVP** in under an hour. Players predict dice roll sums and get instant feedback with score tracking.
 
-## Repo Context
-- React + Vite single-page scaffold
-- Objective: one clear user action (e.g., answer 5 questions, click-to-start mini-game, submit an email, display a simple chart)
-- Keep code small and readable. Avoid premature abstractions.
+## Project Context
+- **Game Type**: Single-page dice prediction game with immediate feedback
+- **Target Audience**: Casual gamers wanting quick, fun challenges with subtle probability learning
+- **Core Action**: Choose dice count (1-3) → predict sum → roll → see win/loss + updated stats
+- **Tech Stack**: React + Vite, client-side only, localStorage for persistence
+- Keep code simple and focused on the game loop. Avoid over-engineering.
 
-## Guardrails
-- No heavy frameworks unless explicitly requested.
-- Minimize dependencies. If adding a lib, explain why in comments.
-- Prefer native fetch and simple state via `useState`.
-- Keep components flat. One file is fine until MVP works.
+## Development Guardrails
+- **Single component first**: Keep everything in App.jsx until core game works
+- **No external game libraries**: Use plain JavaScript for dice rolling and game logic
+- **Mobile-first design**: Large touch targets, responsive layout for phone play
+- **Visual feedback priority**: Clear win/loss states, encouraging messages for engagement
+- **localStorage only**: Persist game stats locally, no backend needed
+- **Emoji/simple graphics**: Use 🎲 or basic CSS for dice visualization
 
 ## Build Flow (ask the user step-by-step)
 1. **Confirm the MVP goal** in one sentence.
@@ -20,14 +24,15 @@
 4. **Add one finishing touch** (basic validation, simple animation, or a tiny data mock).
 5. **Ship** (build & preview), then suggest next steps.
 
-## Prompts to Use with Me (copy/paste)
-- "Given this idea: <idea>, propose a *one-hour MVP* with 3–5 steps and exactly one core user action."
-- "Generate the minimal JSX + state to implement that action. No extra files unless needed."
-- "Refactor my App.jsx to make the code clearer, without adding libraries."
-- "Create a tiny fake data source (an array or JSON) and show how to render it and filter it."
-- "Add a simple result screen summarizing what the user did, without routing."
-- "Suggest the smallest possible accessibility improvements for this UI."
-- "Write a 3–5 bullet README snippet telling someone how to run and use this MVP."
+## Game-Specific Prompts to Use with Me (copy/paste)
+- "Implement the core dice rolling logic with state management for wins/losses"
+- "Create the dice selection UI (1-3 dice) with prediction input and roll button"
+- "Add visual dice representation using emoji or CSS, with roll animation"
+- "Implement localStorage to persist game stats between sessions"
+- "Add probability hints that show after a few games to help learning"
+- "Create encouraging win/loss messages ('Perfect!', 'Close!', 'Try again!')"
+- "Make the layout mobile-responsive with large touch-friendly buttons"
+- "Add simple sound effects or haptic feedback for dice rolls (stretch goal)"
 
 ## Quality Bar
 - Works locally with `npm run dev` and builds with `npm run build`.
