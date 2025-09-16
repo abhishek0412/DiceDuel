@@ -1,83 +1,150 @@
 
-# Prompt to Prototype Vibe Coding Challenge Starter
+# 🎲 Dice Duel
 
-The SkillUp AI **Prompt to Prototype** is a fast-paced AI-powered creation challenge.  
-In one hour, you’ll take an idea from a concept to a working **web-based prototype** using Copilot, Researcher Agent, GitHub Copilot, or no-code React-based builders.
+A fun, interactive dice guessing game where players predict dice roll sums and get instant feedback. Built as a single-page web application with React + Vite.
 
-You’ll go through **six key stages**:
+## 🎯 Game Overview
 
-1.  Ideation — get or refine your idea
-    
-2.  Research — validate and explore your concept
-    
-3.  PRD — define your product requirements
-    
-4.  Branding — give your product a look, feel, and personality
-    
-5.  Prototype — build your MVP
-    
-6.  Submit — package your work for sharing
+**Dice Duel** is a casual gaming experience that subtly teaches probability concepts through engaging gameplay. Players choose the number of dice (1-3), predict the sum, roll, and see if they guessed correctly. The game tracks wins and provides encouraging feedback to keep players engaged.
 
-Visit [https://aka.ms/skillupai/ptpchallenge](https://aka.ms/skillupai/ptpchallenge) to learn more about the Challenge and get started. 
+### Key Features
+- **Quick Setup**: Choose 1-3 dice and enter your prediction
+- **Instant Feedback**: Immediate win/loss results with encouraging messages
+- **Progressive Learning**: Probability hints appear after playing several rounds
+- **Persistent Stats**: Game statistics saved locally between sessions
+- **Mobile-First**: Responsive design with large touch targets
+- **Visual Appeal**: Emoji dice graphics with smooth animations
 
+## 🚀 Live Demo
 
-# Starter Scaffold (React + Vite)
+Run locally:
+```bash
+npm run dev
+```
+Then visit `http://localhost:5173` (or the port shown in terminal)
 
-A tiny scaffold to help you build a **quiz, game, site, dashboard, or landing page** in under an hour.
-Works great in **GitHub Codespaces** and includes **Copilot instructions** to steer your build.
+## 🎮 How to Play
 
-## Quickstart
+1. **Choose Dice Count**: Select 1, 2, or 3 dice
+2. **Make Prediction**: Enter your guess for the sum (valid range shown)
+3. **Roll Dice**: Click "Roll Dice!" and watch the animation
+4. **See Results**: Get instant feedback and updated stats
+5. **Play Again**: Continue to improve your win rate!
 
-**Option A — Codespaces**  
-1. Open this repo in GitHub and click **Code → Codespaces → Create codespace**.  
-2. The dev container installs Node and runs `npm install` automatically.  
-3. Run `npm run dev` to start the dev server.
+## 🛠️ Technical Stack
 
-**Option B — Local**  
-1. Install **Node.js 18+**.  
-2. `npm install`  
-3. `npm run dev`
+- **Frontend**: React 18 with Hooks (useState, useEffect)
+- **Build Tool**: Vite for fast development and building
+- **Styling**: Inline CSS with mobile-first responsive design
+- **Storage**: localStorage for persistent game statistics
+- **Dependencies**: Minimal - uses only React built-ins
 
-Then open the URL shown in your terminal.
-
-## Structure
+## 📁 Project Structure
 
 ```
-.
-├── .devcontainer/
-│   └── devcontainer.json
-├── .github/
-│   └── copilot-instructions.md
+DiceDuel/
+├── public/
+│   └── logo.png              # Game logo
 ├── src/
-│   ├── App.jsx
-│   └── main.jsx
-├── index.html
-├── package.json
-├── vite.config.js
-├── .gitignore
-├── .editorconfig
-└── README.md
+│   ├── App.jsx              # Main game component
+│   └── main.jsx             # React entry point
+├── .github/
+│   └── copilot-instructions.md # AI assistant guidance
+├── index.html               # HTML template
+├── package.json             # Dependencies and scripts
+├── PRD.md                   # Product Requirements Document
+├── AGENTS.md                # AI Development Process
+└── README.md                # This file
 ```
 
-## Copilot Instructions
+## 🏗️ Development Process
 
-This repo includes **custom Copilot instructions** in `.github/copilot-instructions.md` designed to help you speed-run a tiny web MVP in under an hour. The instructions:
+This project was built using AI-assisted development following a structured approach:
 
-- **Keep scope minimal** — Focus on one clear user action (e.g., answer 5 questions, click-to-start mini-game, submit an email)
-- **Prefer plain React + Vite** — Avoid heavy frameworks unless explicitly needed
-- **Follow a 5-step build flow** — Confirm MVP goal → Sketch UI → Wire interaction → Add finishing touch → Ship
-- **Include ready-to-use prompts** — Copy/paste prompts to guide your Copilot chat sessions
+1. **PRD Creation**: Defined clear requirements and scope
+2. **Rapid Prototyping**: Built MVP in phases (30-20-10 minute increments)
+3. **Feature Implementation**: Core game loop → Visual polish → Enhancements
+4. **Testing & Refinement**: Ensured mobile responsiveness and user experience
 
-The instructions help Copilot understand your project context and provide more targeted assistance for rapid prototyping. Simply mention your idea and Copilot will guide you through the structured build process.
+See `AGENTS.md` for detailed AI development methodology.
 
-## Tips
+## 🎯 Game Mechanics
 
-- Delete anything you don't need. Keep it **lean**.
-- Use the **Prompts** inside `.github/copilot-instructions.md` as your running chat with Copilot.
-- Aim for a **single, clear MVP** first (one page, one core action).
-- If you need routing later, add it (e.g., `react-router-dom`) *after* your MVP works. If you want to submit your project to be aggregated, you need to use HashRouter. 
-- See the Prompt to Prototype Challenge Submission Repo at [https://aka.ms/skillupai/ptp/submissions/repo](https://aka.ms/skillupai/ptp/submissions/repo) to learn more. 
+### Scoring System
+- **Win**: Exact prediction match
+- **Close**: Within 1-2 points gets encouraging feedback
+- **Miss**: Motivational message to try again
 
-## License
+### Probability Learning
+- Range indicators show possible sums for each dice count
+- Hints appear after 3+ games explaining probability concepts
+- Win rate tracking helps players see improvement over time
 
-MIT
+## 🔧 Installation & Setup
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Quick Start
+```bash
+# Clone the repository
+git clone [your-repo-url]
+cd DiceDuel
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 🌟 Features Implemented
+
+### Phase 1: Core Game Loop ✅
+- [x] Dice selection buttons (1-3 dice)
+- [x] Number input for sum prediction with validation
+- [x] "Roll Dice" button with random generation
+- [x] Win/loss result display
+- [x] Basic score tracking (wins/total/percentage)
+
+### Phase 2: Polish & Feel ✅
+- [x] Visual dice representation using emoji graphics
+- [x] Win celebration messages
+- [x] Game stats persistence (localStorage)
+- [x] Mobile-responsive layout
+
+### Phase 3: Enhancements ✅
+- [x] Simple roll animation with bouncing dice
+- [x] Probability hints after several games
+- [x] Encouraging feedback system
+
+## 🎨 Design Principles
+
+- **Immediate Gratification**: No loading states or delays
+- **Clear Visual Hierarchy**: Large buttons and obvious next actions
+- **Progressive Disclosure**: Advanced features revealed through play
+- **Accessibility**: High contrast, large touch targets, proper alt text
+
+## 📱 Mobile Optimization
+
+- Large touch targets (minimum 60px height)
+- Responsive flexbox layouts
+- Touch-friendly interactions
+- Optimized for portrait and landscape orientations
+
+## 🔮 Future Enhancements
+
+- Sound effects and haptic feedback
+- Multiplayer challenges
+- Advanced statistics and charts
+- Customizable themes
+- Social sharing features
+- Achievement system
+
+## 📄 License
+
+MIT License - feel free to use this project as a learning resource or starting point for your own games! 
