@@ -89,7 +89,7 @@ See `AGENTS.md` for detailed AI development methodology.
 ### Quick Start
 ```bash
 # Clone the repository
-git clone [your-repo-url]
+git clone https://github.com/abhishek0412/DiceDuel.git
 cd DiceDuel
 
 # Install dependencies
