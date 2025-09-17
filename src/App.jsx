@@ -101,7 +101,7 @@ export default function App() {
         gap: '15px'
       }}>
         <img 
-          src="/logo.png" 
+          src="./logo.png" 
           alt="Dice Duel Logo" 
           style={{ 
             height: '50px', 
